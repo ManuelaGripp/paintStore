@@ -18,27 +18,46 @@ class InputPaintStore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          border: Border(
-              bottom: BorderSide(
-        width: 1,
-        color: Colors.white,
-      ))),
-      child: TextFormField(
-        controller: _controller,
-        validator: _validators,
-        style: const TextStyle(
-          color: Colors.white,
+    return Column(
+      children: [
+        TextFormField(
+          controller: _controller,
+          validator: _validators,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+          decoration: InputDecoration(
+            suffix: _sifix,
+            border: InputBorder.none,
+            hintText: _hintText,
+            enabledBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 2.0,
+              ),
+            ),
+            focusedBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 2.0,
+              ),
+            ),
+            errorStyle: const TextStyle(
+              color: Colors.red,
+            ),
+            errorBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.red,
+                width: 2.0,
+              ),
+            ),
+            hintStyle: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w300,
+            ),
+          ),
         ),
-        decoration: InputDecoration(
-          suffix: _sifix,
-          border: InputBorder.none,
-          hintText: _hintText,
-          hintStyle:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
-        ),
-      ),
+      ],
     );
   }
 }

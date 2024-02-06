@@ -38,6 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.9
   gap: ^3.0.1 
+  dio: ^5.4.0
+  mockito: ^5.4.4
 
 dev_dependencies:
   flutter_test:
